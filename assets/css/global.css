@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+*{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f1f1f1;
+    height: 100w;
+}
+
+.game-area {
+    margin: .25rem;
+    padding: 1rem;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 7fr 1fr 7fr;
+}
+
+
+
+/* PLAYER AREA */
+
+.player-area{
+    padding: .5rem;
+    background-color: #a4caff;
+
+    display: grid;
+    grid-template-rows: 5fr 2fr 4fr;
+}
+
+/* OPONENT AREA */
+.oponent-area{
+    padding: .5rem;
+    background-color: #ffa4a4;
+
+    display: grid;
+    grid-template-rows: 4fr 2fr 5fr ;
+}
+
+
+/* DECK AREA */
+
+.deck-zone{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.deck-zone .grave-area{
+    background-color: #fa4545;
+    width: 30%;
+    height: 70%;
+}
+
+.deck-zone .deck-area{
+    background-color: #3cf745;
+    width: 30%;
+    height: 70%;
+}
+
+/* MAIN AREA */
+
+.main-zone{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.main-zone .card-area{
+    background-color: #f1f1f1;
+    border: 1px dashed #202020;
+    border-radius: 2rem;
+}
+
+/* PLAYER ZONE */
+
+.player-zone{
+    display: grid;
+    grid-template-columns: 7fr 2fr;
+}
+
+.player-hand{
+    list-style: none;
+    margin: .25rem;
+    padding: .25rem;
+    height: 100%;
+}
+
+.player-hand ol{
+    list-style: none;
+    margin: .25rem;
+    padding: .25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    height: 100%;
+
+}
+
+.player-hand .cards{
+    background-color: #f1a35a;
+    width: 20%;
+    height: 50%;
+    text-align: center;
+    justify-items: center;
+
+}
+
+/* TURN-TIMER */
+
+.turn_timer{
+    display: grid;
+    grid-template-columns: 7fr 2fr;
+}
+
+/* TIMER */
+
+.timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.timer span{
+    font-size: 1.5rem;
+}
+
+/* button */
+.button-area{
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button-size{
+    width: 100%;
+    height: 100%;
+}
+
+.button-area button{
+    display:block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; 
+    background-color: #9af347;
+    border: none;
+}
