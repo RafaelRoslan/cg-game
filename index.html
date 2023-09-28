@@ -16,8 +16,9 @@
     <title>Card Game</title>
 
     <!-- script -->
-    <script src="./assets/scripts/card-model.js" defer></script>
+    <script src="./assets/scripts/create-deck.js" defer></script>
     <script src="./assets/scripts/poke-api.js" defer></script>
+    <script src="./assets/scripts/event-Lister.js" defer></script>
     <script src="./assets/scripts/main.js" defer></script>
 
 </head>
@@ -26,8 +27,8 @@
         <div class="oponent-area">
             <div class="oponent-zone">
                 <div class="deck-zone">
-                    <div class="grave-area"></div>
-                    <div class="deck-area"></div>
+                    <div class="grave-area"><span>0</span></div>
+                    <div class="deck-area"><span>15</span></div>
                 </div>
                 <div class="player-hand">
                     <div class="card"></div>
@@ -56,9 +57,9 @@
         </div>
         <div class="player-area">
             <div class="main-zone">
-                <div class="card-area area-atk"></div>
-                <div class="card-area area-spd"></div>
-                <div class="card-area area-def"></div>
+                <div id="player-atk" class="card-area area-atk"></div>
+                <div id="player-spd" class="card-area area-spd"></div>
+                <div id="player-def" class="card-area area-def"></div>
             </div>
             
             <div class="player-zone">
@@ -66,8 +67,8 @@
                     
                 </div>
                 <div class="deck-zone">
-                    <div class="deck-area"></div>
-                    <div class="grave-area"></div>
+                    <div class="deck-area"><span>15</span></div>
+                    <div class="grave-area"><span>0</span></div>
                 </div>
             </div>
         </div>
