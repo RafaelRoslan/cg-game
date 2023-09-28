@@ -8,11 +8,12 @@
 body{
     background-color: #f1f1f1;
     height: 100w;
+    overflow: hidden;
 }
 
 .game-area {
     margin: .25rem;
-    padding: 1rem;
+    padding: .5rem;
     height: 100vh;
     width: 100%;
     display: grid;
@@ -26,18 +27,16 @@ body{
 .player-area{
     padding: .5rem;
     background-color: #a4caff;
-
     display: grid;
-    grid-template-rows: 5fr 2fr 4fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 /* OPONENT AREA */
 .oponent-area{
     padding: .5rem;
     background-color: #ffa4a4;
-
     display: grid;
-    grid-template-rows: 4fr 2fr 5fr ;
+    grid-template-rows: 1fr 1fr ;
 }
 
 
@@ -46,48 +45,66 @@ body{
 .deck-zone{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .deck-zone .grave-area{
     background-color: #fa4545;
-    width: 30%;
-    height: 70%;
+    width: 100px;
+    height: 145px;
+    border-radius: .5rem;
 }
 
 .deck-zone .deck-area{
     background-color: #3cf745;
-    width: 30%;
-    height: 70%;
+    width: 100px;
+    height: 145px;
+    border-radius: .5rem;
 }
 
 /* MAIN AREA */
 
 .main-zone{
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
     gap: 1rem;
 }
 
 .main-zone .card-area{
-    background-color: #f1f1f1;
+    width: 100px;
+    height: 145px;
     border: 1px dashed #202020;
-    border-radius: 2rem;
+    border-radius: .5rem;
 }
+
+.area-atk{background-color: #ffffff;}
+.area-spd{background-color: #ffffff;}
+.area-def{background-color: #ffffff;}
 
 /* PLAYER ZONE */
 
 .player-zone{
     display: grid;
-    grid-template-columns: 7fr 2fr;
+    grid-template-columns: 7fr 3fr;
+    padding: .5rem;
+}
+
+.oponent-zone{
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    padding: .5rem;
 }
 
 .player-hand{
+    display: flex;
+    gap: .5rem;
     list-style: none;
-    margin: .25rem;
     padding: .25rem;
     height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .player-hand ol{
@@ -103,14 +120,49 @@ body{
 
 }
 
-.player-hand .cards{
+.player-hand .card{
     background-color: #f1a35a;
-    width: 20%;
-    height: 50%;
+    width: 100px;
+    height: 145px;
+    display: flex;
     text-align: center;
     justify-items: center;
-
+    border-radius: .5rem;
 }
+
+.card .card-content{
+    width: 100%;
+    padding: .25rem;
+}
+
+.card-content .card-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .25rem;
+}
+
+.card-img img{
+    width: 85px;
+}
+.card-content .card-status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.card-status .status{
+    padding: .15rem;
+    border-radius: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-status .atk{background-color: #fa4545;}
+.card-status .spd{background-color: #3cf745;}
+.card-status .def{background-color: #5295f3;}
+
 
 /* TURN-TIMER */
 
