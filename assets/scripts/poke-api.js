@@ -57,10 +57,3 @@ pokeApi.getPokemons = (id)=>{
             .then((dataPokemon)=> getCardData(dataPokemon))
             .catch((error)   => console.log(error));
 }
-
-pokeApi.randonNumber = ()=>{
-    const url = `https://csrng.net/csrng/csrng.php?min=${min}&max=${max}`;
-
-    return fetch(url)
-        .then((response) => {console.log(response);})
-}

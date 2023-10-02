@@ -1,29 +1,41 @@
-const deck = [];
+const game={};
 
-for (let i = 0; i < 15; i++) {
-    deck.push(Math.floor(Math.random()*150)+1);
+game.playerScore = 0;
+game.oponentScore = 0;
+
+game.startGame = ()=>{
+    deckProp.inicialiseDecks();  
+    deckProp.drawCard();
+    oponentTurn.inicializeBtn();
+    battleCards.inicializeBattleBtn();
 }
 
-checkHand();
+game.updateScore = ()=>{
+    console.log(game.playerScore);
+    console.log(game.oponentScore);
+    const playerScoreTxt = document.getElementById('player-point');
+    const oponentScoreTxt = document.getElementById('oponent-point');
 
-
-
-function checkHand() {
-    if(hand.childElementCount <=5){
-        for (let i = hand.childElementCount; i < 5; i++) {
-            pokeApi.getPokemons(deck[0]).then((pokemonData) =>{
-                hand.appendChild(createCard(pokemonData));
-                    
-            })
-            deck.shift();                   
-        }
-    }
+    playerScoreTxt.innerHTML = game.playerScore.toString();
+    oponentScoreTxt.innerHTML = game.oponentScore.toString();
 }
+
+ game.startGame();
+
+
+
 
 
 
 //gerador de numero
-//https://csrng.net/csrng/csrng.php?min=0&max=150
+function getRandNum(min,max) {
+    const url = `https://www.random.org/integers/?num=1&min=${min}&max=${max}&col=1&base=10&format=plain&rnd=new`;
+
+    return fetch(url)
+            .then((response)=>response.json())
+            .then((randData) => randData)
+            .catch((error)=>console.log(error));
+}
 
 //gerador de nome
 //https://jsonplaceholder.typicode.com/users

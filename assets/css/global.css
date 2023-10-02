@@ -17,7 +17,7 @@ body{
     height: 100vh;
     width: 100%;
     display: grid;
-    grid-template-rows: 7fr 7fr;
+    grid-template-rows: 7fr .5fr 7fr;
 }
 
 
@@ -54,6 +54,9 @@ body{
     width: 100px;
     height: 145px;
     border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .deck-zone .deck-area{
@@ -66,12 +69,12 @@ body{
     align-items: center;
 }
 
-.deck-area span{
+.deck-area span, .grave-area span{
     visibility: hidden;
     font-size: 3rem;
 }
 
-.deck-area:hover span{
+.deck-area:hover span, .grave-area:hover span{
     visibility: visible;
 }
 
@@ -88,7 +91,7 @@ body{
     align-items: end;
 }
 
-.card-area{
+.card-area, .card-area-op{
     width: 110px;
     height: 155px;
     border: 1px dashed #202020;
@@ -98,9 +101,9 @@ body{
     align-items: center;
 }
 
-.area-atk{background-color: #ffffff;}
-.area-spd{background-color: #ffffff;}
-.area-def{background-color: #ffffff;}
+.area-atk, .area-atk-op{background-color: #ffffff;}
+.area-spd, .area-spd-op{background-color: #ffffff;}
+.area-def, .area-def-op{background-color: #ffffff;}
 
 /* PLAYER ZONE */
 
@@ -184,23 +187,24 @@ body{
 .card-status .def{background-color: #5295f3;}
 
 
-/* TURN-TIMER */
+/* MID-BOARD*/
 
-.turn_timer{
+.midboard{
     display: grid;
-    grid-template-columns: 7fr 2fr;
+    grid-template-columns: 1fr 4fr 1fr;
 }
 
 /* TIMER */
 
-.timer{
+.scoreboard{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.timer span{
+.scoreboard span{
     font-size: 1.5rem;
 }
+
 
 /* button */
 .button-area{
@@ -215,11 +219,11 @@ body{
     height: 100%;
 }
 
-.button-area button{
+.btnAction{
     display:block;
     width: 100%;
     height: 100%;
-    border-radius: 50%; 
+    border-radius: 2rem; 
     background-color: #9af347;
     border: none;
 }
@@ -231,4 +235,28 @@ body{
 
 .hide{
     display: none;
+}
+
+
+/* BATTLE */
+.battle{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    margin: 0;
+    background-color: #00000091;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.txtBattle{
+    font-size: 3rem;
+    color: #ffffff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 700;
 }
