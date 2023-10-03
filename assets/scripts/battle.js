@@ -1,14 +1,14 @@
 const battleCards={};
-const btnBattleAction = document.getElementById('btnBattle');
+//const btnBattleAction = document.getElementById('btnBattle');
 const gameArea = document.getElementById('body');
 
-battleCards.inicializeBattleBtn=()=>{
-    btnBattleAction.addEventListener('click',()=>{
-    startBattle();
-})};
+// battleCards.inicializeBattleBtn=()=>{
+//     btnBattleAction.addEventListener('click',()=>{
+//     startBattle();
+// })};
 
 function startBattle() {
-    btnBattleAction.disabled = true;
+    //btnBattleAction.disabled = true;
     const panel = document.createElement('div');
     panel.classList.add('battle')
     panel.style.display = 'flex';
@@ -54,17 +54,13 @@ function startBattle() {
 
 
 function checkStats(player,oponent, stat) {
-    console.log(player.querySelector(stat).innerHTML)
-    console.log(oponent.querySelector(stat).innerHTML)
+
     if(parseInt(player.querySelector(stat).innerHTML) > parseInt(oponent.querySelector(stat).innerHTML)){
-        console.log('ganhou');
         oponent.innerHTML ='';
     }else if(parseInt(player.querySelector(stat).innerHTML) < parseInt(oponent.querySelector(stat).innerHTML)){
-        console.log('perdeu');
         player.innerHTML ='';
     }
     else{
-        console.log('empate');
         player.innerHTML ='';
         oponent.innerHTML ='';
     }

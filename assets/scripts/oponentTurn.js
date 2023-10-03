@@ -26,10 +26,10 @@ oponentTurn.inicializeBtn = ()=>{
         }
     
         setTimeout(()=>{
-            btnEndTurn.classList.add('hide');
-            btnBattle.classList.remove('hide');
-    
-        },500)
+            //btnEndTurn.classList.add('hide');
+            //btnBattle.classList.remove('hide');
+            startBattle();
+        },1000)
         
     });
 }

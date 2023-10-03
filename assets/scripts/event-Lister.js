@@ -1,5 +1,7 @@
-const cardArea = document.querySelectorAll('.card-area');
-const hand = document.getElementById('player-hand');
+const cardArea  = document.querySelectorAll('.card-area');
+const hand      = document.getElementById('player-hand');
+const grave     = document.getElementById('grave-area');
+let contDraw    = 0
 
 
 //Adiconando EventListener
@@ -15,6 +17,11 @@ hand.addEventListener('dragover', dragOver);
 hand.addEventListener('dragleave', dragLeave);
 hand.addEventListener('drop', drop);
 
+grave.addEventListener('dragenter', dragEnter);
+grave.addEventListener('dragover', dragOver);
+grave.addEventListener('dragleave', dragLeave);
+grave.addEventListener('drop',discardAndDraw);
+
 
 //DRAG E DROP
 function dragStart(e) {
@@ -29,18 +36,18 @@ function dragStart(e) {
 }
 
 function dragEnter(e) {
-    if(e.target.classList.contains('card-area') || e.target.classList.contains('player-hand')){
+    if(e.target.classList.contains('card-area') || e.target.classList.contains('player-hand')|| e.target.classList.contains('grave-area')){
         e.preventDefault(); // possibilita o alvo ser valido para o drop 
-        if(e.target.classList.contains('card-area')){
+        if(e.target.classList.contains('card-area') || e.target.classList.contains('grave-area')){
             e.target.classList.add('drag-over');
         }
     }
 }
 
 function dragOver(e) {
-    if(e.target.classList.contains('card-area') || e.target.classList.contains('player-hand')){
+    if(e.target.classList.contains('card-area') || e.target.classList.contains('player-hand')|| e.target.classList.contains('grave-area')){
         e.preventDefault(); // possibilita o alvo ser valido para o drop 
-        if(e.target.classList.contains('card-area')){
+        if(e.target.classList.contains('card-area') || e.target.classList.contains('grave-area')){
             e.target.classList.add('drag-over');
         }
     }
@@ -77,4 +84,18 @@ function drop(e) {
     e.target.appendChild(draggable);
     }
     
+}
+
+
+
+function discardAndDraw(e) {
+    if(contDraw < 1){
+        console.log('x');
+        const id = e.dataTransfer.getData('text');
+        const draggable = document.getElementById(id);
+        console.log(id);
+        draggable.remove();
+        deckProp.drawCard();
+        contDraw++;
+    }
 }

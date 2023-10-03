@@ -7,7 +7,7 @@ game.startGame = ()=>{
     deckProp.inicialiseDecks();  
     deckProp.drawCard();
     oponentTurn.inicializeBtn();
-    battleCards.inicializeBattleBtn();
+    //battleCards.inicializeBattleBtn();
 }
 
 game.updateScore = ()=>{
