@@ -1,6 +1,5 @@
 const oponentTurn={};
 const btnEndTurn = document.getElementById('btnEndTurn');
-const btnBattle = document.getElementById('btnBattle');
 const oponentDeck = document.getElementById('oponent-deck');
 
 oponentTurn.inicializeBtn = ()=>{

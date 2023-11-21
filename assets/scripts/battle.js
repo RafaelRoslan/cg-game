@@ -1,54 +1,66 @@
-const battleCards={};
-//const btnBattleAction = document.getElementById('btnBattle');
-const gameArea = document.getElementById('body');
+const battleCards={
+    gameArea: document.getElementById('body'),
+    player:{
+        score: document.querySelector('#player-zone'),
+        areaAtk:document.querySelector('.area-atk'),
+        areaSpd:document.querySelector('.area-spd'),
+        areaDef:document.querySelector('.area-def'),
+    },
+    oponent:{
+        score: document.querySelector('#oponent-zone'),
+        areaAtk:document.querySelector('.area-atk-op'),
+        areaSpd:document.querySelector('.area-spd-op'),
+        areaDef:document.querySelector('.area-def-op'),
+    }
+};
 
-// battleCards.inicializeBattleBtn=()=>{
-//     btnBattleAction.addEventListener('click',()=>{
-//     startBattle();
-// })};
+const btnTurn = document.getElementById('btnEndTurn');
 
-function startBattle() {
+async function startBattle() {
     //btnBattleAction.disabled = true;
     const panel = document.createElement('div');
-    panel.classList.add('battle')
+    panel.classList.add('battle');
+    panel.classList.add('start');
     panel.style.display = 'flex';
     
-    gameArea.appendChild(panel);
+    battleCards.gameArea.appendChild(panel);
     setTimeout(()=>{
         const txtBattle = document.createElement('span');
         txtBattle.classList.add('txtBattle');
         txtBattle.textContent = 'BATTLE';
         panel.appendChild(txtBattle)
     },200);
-    setTimeout(()=>{panel.remove();},1000)
+    setTimeout(()=>{
+        panel.classList.remove('start');
+        panel.innerHTML = "";
+    },1000)
     
-    setTimeout(async()=>{
-        let playerPoint = document.querySelector('#player-zone');
-        let oponentPoint = document.querySelector('#oponent-zone');
+    await setTimeout(async()=>{
 
-        let cardPlayer = document.querySelector('.area-atk');
-        let cardOponent = document.querySelector('.area-atk-op');
-        checkStats(cardPlayer, cardOponent,'.atk');
+        checkStats(battleCards.player.areaAtk, battleCards.oponent.areaAtk,'.atk');
+        checkStats(battleCards.player.areaSpd, battleCards.oponent.areaSpd,'.spd');
+        checkStats(battleCards.player.areaDef, battleCards.oponent.areaDef,'.def');
 
-        cardPlayer = document.querySelector('.area-spd');
-        cardOponent = document.querySelector('.area-spd-op');
-        checkStats(cardPlayer, cardOponent,'.spd');
+        let playerScore = battleCards.player.score.querySelectorAll('.card');
+        let oponentScore= battleCards.oponent.score.querySelectorAll('.card');
 
-        cardPlayer = document.querySelector('.area-def');
-        cardOponent = document.querySelector('.area-def-op');
-        checkStats(cardPlayer, cardOponent,'.def');
 
-        if (playerPoint.querySelectorAll('.card').length > oponentPoint.querySelectorAll('.card').length) {
-            game.playerScore += 1;
-        }else if(playerPoint.querySelectorAll('.card').length < oponentPoint.querySelectorAll('.card').length){
-            game.oponentScore += 1;
+        if (playerScore.length > oponentScore.length) {
+            game.playerScore++;
+        }else if(playerScore.length < oponentScore.length){
+            game.oponentScore++;
         }
         
         await game.updateScore();
         await deckProp.drawCard();
-
+        
 
     },1500)
+    
+    await setTimeout(async()=>{await resetBattle(panel);},3000)
+    
+    
+    
 
 }
 
@@ -64,4 +76,18 @@ function checkStats(player,oponent, stat) {
         player.innerHTML ='';
         oponent.innerHTML ='';
     }
+}
+
+async function resetBattle(panel){
+    battleCards.player.areaAtk.innerHTML = "";
+    battleCards.player.areaSpd.innerHTML = "";
+    battleCards.player.areaDef.innerHTML = "";
+    battleCards.oponent.areaAtk.innerHTML = "";
+    battleCards.oponent.areaSpd.innerHTML = "";
+    battleCards.oponent.areaDef.innerHTML = "";
+    
+    btnTurn.disabled = false;
+    btnTurn.style.backgroundColor = '#9af347';
+
+    panel.remove();
 }

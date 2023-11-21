@@ -1,13 +1,14 @@
-const game={};
+const game={
+    playerScore:0,
+    oponentScore:0,
+};
 
-game.playerScore = 0;
-game.oponentScore = 0;
 
 game.startGame = ()=>{
-    deckProp.inicialiseDecks();  
+    deckProp.inicialiseDecks();
     deckProp.drawCard();
     oponentTurn.inicializeBtn();
-    //battleCards.inicializeBattleBtn();
+
 }
 
 game.updateScore = ()=>{
@@ -18,9 +19,17 @@ game.updateScore = ()=>{
 
     playerScoreTxt.innerHTML = game.playerScore.toString();
     oponentScoreTxt.innerHTML = game.oponentScore.toString();
+
+    if(game.playerScore > 2){
+        alert("Voce ganhou!");
+        window.location.reload();
+    }else if(game.oponentScore > 2){
+        alert("Voce Perdeu!");
+        window.location.reload();
+    }
 }
 
- game.startGame();
+game.startGame();
 
 
 

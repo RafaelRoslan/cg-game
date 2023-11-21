@@ -4,7 +4,7 @@ deckProp['deck']=[];
 deckProp['deckOponent']=[];
 
 deckProp.inicialiseDecks = ()=>{
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 30; i++) {
         deckProp.deck.push(Math.floor(Math.random()*150)+1);
         deckProp.deckOponent.push(Math.floor(Math.random()*150)+1);
     }

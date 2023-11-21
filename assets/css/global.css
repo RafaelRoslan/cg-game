@@ -240,17 +240,22 @@ body{
 
 /* BATTLE */
 .battle{
+    outline: none;
     display: none;
     width: 100%;
     height: 100vh;
     z-index: 1;
     margin: 0;
-    background-color: #00000091;
+    
     position: absolute;
     position: fixed;
     top: 0;
     align-items: center;
     justify-content: center;
+}
+
+.start{
+    background-color: #00000091;
 }
 
 .txtBattle{
