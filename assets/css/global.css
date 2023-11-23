@@ -26,17 +26,43 @@ body{
 
 .player-area{
     padding: .5rem;
-    background-color: #a4caff;
+    background-color: #3d72bb;
     display: grid;
     grid-template-rows: 1fr 1fr;
+    box-shadow: 5px 5px 5px rgb(68, 68, 68);
+    border-radius: 10px;
 }
 
 /* OPONENT AREA */
 .oponent-area{
     padding: .5rem;
-    background-color: #ffa4a4;
+    background-color: #d45959;
     display: grid;
     grid-template-rows: 1fr 1fr ;
+    box-shadow: 5px 5px 5px rgb(68, 68, 68);
+    border-radius: 10px;
+}
+
+/* AVATAR */
+
+.area-avatar{
+    width: 150px; 
+    height: 150px; 
+    overflow: hidden; 
+    border: 2px solid #ccc; 
+    border-radius: 8px; 
+    box-shadow: 5px 5px 5px rgb(68, 68, 68);
+    border-color: black;
+    /* display: flex;
+    align-items: center; */
+}
+
+.avatar-image {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    background-color: #ffffff;
+    
 }
 
 
@@ -47,6 +73,7 @@ body{
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    
 }
 
 .deck-zone .grave-area{
@@ -57,6 +84,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 5px 5px 5px rgb(68, 68, 68);
+    border-color: black;
 }
 
 .deck-zone .deck-area{
@@ -67,11 +96,15 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 5px 5px 5px rgb(68, 68, 68);
+    border-color: black;
 }
 
 .deck-area span, .grave-area span{
     visibility: hidden;
     font-size: 3rem;
+    
+    
 }
 
 .deck-area:hover span, .grave-area:hover span{
@@ -85,10 +118,12 @@ body{
     display: flex;
     justify-content: center;
     gap: 1rem;
+    
 }
 
 .oponent-area .main-zone{
     align-items: end;
+    
 }
 
 .card-area, .card-area-op{
@@ -99,9 +134,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 5px 5px 5px rgb(68, 68, 68);
 }
 
-.area-atk, .area-atk-op{background-color: #ffffff;}
+.area-atk, .area-atk-op{background-color: #ffffff;} 
 .area-spd, .area-spd-op{background-color: #ffffff;}
 .area-def, .area-def-op{background-color: #ffffff;}
 
@@ -111,12 +147,14 @@ body{
     display: grid;
     grid-template-columns: 7fr 3fr;
     padding: .5rem;
+    
 }
 
 .oponent-zone{
     display: grid;
     grid-template-columns: 3fr 7fr;
     padding: .5rem;
+    
 }
 
 .player-hand{
@@ -127,6 +165,7 @@ body{
     height: 100%;
     justify-content: center;
     align-items: center;
+    
 }
 
 .player-hand ol{
@@ -139,6 +178,7 @@ body{
     align-items: center;
     gap: .5rem;
     height: 100%;
+    
 
 }
 
@@ -150,11 +190,13 @@ body{
     text-align: center;
     justify-items: center;
     border-radius: .5rem;
+    box-shadow: 5px 5px 5px rgb(68, 68, 68);
 }
 
 .card .card-content{
     width: 100%;
     padding: .25rem;
+    
 }
 
 .card-content .card-img{
@@ -264,4 +306,13 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
     font-weight: 700;
+}
+
+
+#player-name{
+    margin-right: 2rem;
+}
+
+#oponent-name{
+    margin-left: 2rem;
 }

@@ -1,10 +1,13 @@
 const game={
     playerScore:0,
     oponentScore:0,
+
 };
 
 
 game.startGame = ()=>{
+    gerarNumero(1,151);
+    imprimirNome();
     deckProp.inicialiseDecks();
     deckProp.drawCard();
     oponentTurn.inicializeBtn();
@@ -36,16 +39,6 @@ game.startGame();
 
 
 
-//gerador de numero
-function getRandNum(min,max) {
-    const url = `https://www.random.org/integers/?num=1&min=${min}&max=${max}&col=1&base=10&format=plain&rnd=new`;
 
-    return fetch(url)
-            .then((response)=>response.json())
-            .then((randData) => randData)
-            .catch((error)=>console.log(error));
-}
 
-//gerador de nome
-//https://jsonplaceholder.typicode.com/users
 
