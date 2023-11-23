@@ -6,7 +6,6 @@ const game={
 
 
 game.startGame = ()=>{
-    gerarNumero(1,151);
     imprimirNome();
     deckProp.inicialiseDecks();
     deckProp.drawCard();
