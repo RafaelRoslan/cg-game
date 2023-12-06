@@ -1,5 +1,15 @@
 @charset "UTF-8";
 
+:root{
+    --card-width: 100px;
+    --card-height: 145px;
+    --h2-width: 20px;
+    --card-area-width: 110px;
+    --card-area-height: 155px;
+    --font-size-card: 16px;
+    --card-image-size: 85px;
+}
+
 *{
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
@@ -7,8 +17,7 @@
 
 body{
     background-color: #f1f1f1;
-    height: 100w;
-    overflow: hidden;
+    height: 100vh;
 }
 
 .game-area {
@@ -20,7 +29,37 @@ body{
     grid-template-rows: 7fr .5fr 7fr;
 }
 
+.menu{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    >.container{
+        background-color: #5295f3;
+        width: 30%;
+        height: 25%;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+    }
+}
 
+.menu .container .input-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .25rem;
+    >input{
+        border-radius: .5rem;
+        height: 28px;
+        text-align: center;
+    }
+}
 
 /* PLAYER AREA */
 
@@ -78,8 +117,8 @@ body{
 
 .deck-zone .grave-area{
     background-color: #fa4545;
-    width: 100px;
-    height: 145px;
+    width: var(--card-width);
+    height: var(--card-height);
     border-radius: .5rem;
     display: flex;
     justify-content: center;
@@ -90,14 +129,27 @@ body{
 
 .deck-zone .deck-area{
     background-color: #3cf745;
-    width: 100px;
-    height: 145px;
+    width: var(--card-width);
+    height: var(--card-height);
     border-radius: .5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 5px 5px 5px rgb(68, 68, 68);
     border-color: black;
+}
+
+.deck-area, .grave-area{
+    >img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: .4rem;
+    }
+    >span{
+        position: absolute;
+    }
+    
 }
 
 .deck-area span, .grave-area span{
@@ -127,8 +179,8 @@ body{
 }
 
 .card-area, .card-area-op{
-    width: 110px;
-    height: 155px;
+    width: var(--card-area-width);
+    height: var(--card-area-height);
     border: 1px dashed #202020;
     border-radius: .5rem;
     display: flex;
@@ -184,8 +236,8 @@ body{
 
 .card{
     background-color: #f1a35a;
-    width: 100px;
-    height: 145px;
+    width: var(--card-width);
+    height: var(--card-height);
     display: flex;
     text-align: center;
     justify-items: center;
@@ -207,7 +259,7 @@ body{
 }
 
 .card-img img{
-    width: 85px;
+    width: var(--card-image-size);
     pointer-events: none;
 }
 .card-content .card-status{
@@ -224,9 +276,18 @@ body{
     align-items: center;
 }
 
-.card-status .atk{background-color: #fa4545;}
-.card-status .spd{background-color: #3cf745;}
-.card-status .def{background-color: #5295f3;}
+.card-status .atk{
+    background-color: #fa4545;
+    font-size: var(--font-size-card);
+}
+.card-status .spd{
+    background-color: #3cf745;
+    font-size: var(--font-size-card);
+}
+.card-status .def{
+    background-color: #5295f3;
+    font-size: var(--font-size-card);
+}
 
 
 /* MID-BOARD*/

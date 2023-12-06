@@ -1,3 +1,8 @@
+const menuGame = document.querySelector('.menu');
+const gameArea = document.querySelector('.game-area');
+const playerName = document.querySelector('#player-name');
+const inputName = document.querySelector('#input-name');
+
 const game={
     playerScore:0,
     oponentScore:0,
@@ -5,8 +10,12 @@ const game={
 };
 
 
-game.startGame = ()=>{
+game.startGame = async ()=>{
+    menuGame.classList.add('hide');
+    gameArea.classList.remove('hide');
+    if(inputName.value !=""){ playerName.innerHTML = inputName.value.toUpperCase()}
     imprimirNome();
+    // addImage();
     deckProp.inicialiseDecks();
     deckProp.drawCard();
     oponentTurn.inicializeBtn();
@@ -31,7 +40,6 @@ game.updateScore = ()=>{
     }
 }
 
-game.startGame();
 
 
 

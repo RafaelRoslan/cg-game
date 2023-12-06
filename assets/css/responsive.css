@@ -1,0 +1,11 @@
+@media only screen and (max-width: 1024px) {
+    :root{
+        --card-width: 80px;
+        --card-height: 125px;
+        --h2-width: 20px;
+        --card-area-width: 90px;
+        --card-area-height: 135px;
+        --font-size-card: 12px;
+        --card-image-size: 65px;
+    }
+}
