@@ -34,7 +34,7 @@ function createCard(dataCard) {
     card.addEventListener('dragstart',dragStart)
     card.innerHTML = `
         <div class="card-content">    
-            <div>${dataCard.name}</div>
+            <div class="card-name">${dataCard.name}</div>
             <div class="card-img">
                 <img src="${dataCard.img}" alt="${dataCard.name}">
             </div>

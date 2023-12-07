@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1199px) {
     :root{
         --card-width: 80px;
         --card-height: 125px;
@@ -7,5 +7,35 @@
         --card-area-height: 135px;
         --font-size-card: 12px;
         --card-image-size: 65px;
+        --avatar-size: 120px;
+        --card-gap: .4rem;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    :root{
+        --card-width: 60px;
+        --card-height: 95px;
+        --h2-width: 16px;
+        --card-area-width: 65px;
+        --card-area-height: 100px;
+        --font-size-card: 10px;
+        --card-image-size: 55px;
+        --avatar-size: 100px;
+        --card-gap: .1rem;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    :root{
+        --card-width: 40px;
+        --card-height: 85px;
+        --h2-width: 14px;
+        --card-area-width: 55px;
+        --card-area-height: 85px;
+        --font-size-card: 8px;
+        --card-image-size: 45px;
+        --avatar-size: 80px;
+        --card-gap: 0;
     }
 }

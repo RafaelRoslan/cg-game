@@ -17,7 +17,7 @@ const battleCards={
 const btnTurn = document.getElementById('btnEndTurn');
 
 async function startBattle() {
-    //btnBattleAction.disabled = true;
+    
     const panel = document.createElement('div');
     panel.classList.add('battle');
     panel.classList.add('start');
@@ -27,7 +27,7 @@ async function startBattle() {
     setTimeout(()=>{
         const txtBattle = document.createElement('span');
         txtBattle.classList.add('txtBattle');
-        txtBattle.textContent = 'BATTLE';
+        txtBattle.textContent = 'BATALHA';
         panel.appendChild(txtBattle)
     },200);
     setTimeout(()=>{
@@ -57,7 +57,7 @@ async function startBattle() {
 
     },1500)
     
-    await setTimeout(async()=>{await resetBattle(panel);},3000)
+    await setTimeout(async()=>{await resetBattle(panel);},3500)
     
     
     
