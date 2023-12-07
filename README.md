@@ -2,4 +2,4 @@
 protótipo com mecânica de jogo estilo card-game
 
 
-https://vercel.com/rafaelroslan/cg-game
+https://cg-game.vercel.app/
